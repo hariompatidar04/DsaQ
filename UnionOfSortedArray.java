@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class UnionOfSortedArray{
     public static void main(String[] args) {
@@ -11,8 +12,14 @@ class UnionOfSortedArray{
         
     }
     static ArrayList<Integer> unionArr(int []a,int[]b){
+
+        //if the Array is unsorted then first need to sort them 
+        
+        Arrays.sort(a);
+        Arrays.sort(b);
+
         ArrayList<Integer> li=new ArrayList<>();
-        int prev=-1;
+        int prev=Integer.MIN_VALUE;
         int i=0;
         int j=0;
         while(i<a.length && j<b.length){
